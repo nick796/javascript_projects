@@ -1,0 +1,85 @@
+
+button{
+    border-radius: 20px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    min-height: 100vh;
+    background-color: #859aae;
+
+    border: 5px solid black;
+}
+.under-container{
+    display: flex;
+    justify-content: center;
+    border: 5px solid black;
+    padding: 10px;
+}
+
+
+
+/* Colors container */
+.colors-container{
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    
+}
+.color-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+
+.color-card:hover {
+    transform: scale(1.05); /* Μικρό εφε μεγέθυνσης */
+}
+
+.color-box {
+    width: 80px;
+    height: 120px;
+    border-radius: 8px;
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.hex-code {
+    font-family: monospace;
+    font-weight: bold;
+    color: #333;
+}
+
+
+#btn-palette {
+    position: relative;    /* Απαραίτητο για να μπει η γραμμή από πάνω */
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    overflow: hidden;      /* Κρύβει τη γραμμή όταν είναι έξω από το κουμπί */
+}
+
+/* Φτιάχνουμε τη μωβ γραμμή */
+#btn-palette::before {
+    content: "";           /* Απαραίτητο για να εμφανιστεί το ψευδο-στοιχείο */
+    position: absolute;
+    top: 0;                /* Την βάζουμε στο πάνω μέρος */
+    left: -100%;           /* Την κρύβουμε τέρμα αριστερά έξω από το κουμπί */
+    width: 100%;
+    height: 4px;           /* Το πάχος της γραμμής */
+    background-color: rgb(162, 89, 181);
+    transition: all 0.7s;  /* Η ταχύτητα του animation */
+}
+
+/* Τι συμβαίνει στο Hover */
+#btn-palette:hover::before {
+    left: 0;               /* Η γραμμή γλιστράει προς τα μέσα */
+}
