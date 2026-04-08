@@ -1,6 +1,27 @@
-
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
 button{
     border-radius: 20px;
+}
+@media(max-width:600px){
+    .contianer{
+        padding: 20px 10px;
+        justify-content: flex-start;
+    }
+    h1
+    {
+        font-size: 22px;
+        text-align:center
+
+    }
+    .color-card:hover{
+        transform: scale(1,1);
+    }
+    .color-box{
+        width:100px;
+        height:100px;
+    }
 }
 .container{
     display: flex;
@@ -14,10 +35,7 @@ button{
     border: 5px solid black;
 }
 .under-container{
-    display: flex;
-    justify-content: center;
-    border: 5px solid black;
-    padding: 10px;
+
 }
 
 
@@ -25,8 +43,12 @@ button{
 /* Colors container */
 .colors-container{
     display: flex;
-    gap: 15px;
-    margin-top: 30px;
+    gap: 25px;
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1em;
     
 }
 .color-card{
@@ -36,18 +58,38 @@ button{
     gap: 10px;
     cursor: pointer;
     transition: transform 0.2s;
+  
+}
+
+.color-info{
+    background-color: rgb(253, 244, 244);
+    padding: 2px  10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 11px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.2s; /* Ομαλή αλλαγή */
+
+}
+
+/* Το animation της αντιγραφής */
+.copied-anim {
+    background-color: #2ecc71; /* Γίνεται πράσινο */
+    color: white;
+    border-color: #27ae60;
 }
 
 
 .color-card:hover {
-    transform: scale(1.05); /* Μικρό εφε μεγέθυνσης */
+    transform: scale(1.35); /* Μικρό εφε μεγέθυνσης */
 }
 
 .color-box {
     width: 80px;
     height: 120px;
     border-radius: 8px;
-    border: 2px solid rgba(0,0,0,0.1);
+    border: 3px solid rgba(0,0,0,0.1);
 }
 
 .hex-code {
@@ -58,28 +100,15 @@ button{
 
 
 #btn-palette {
-    position: relative;    /* Απαραίτητο για να μπει η γραμμή από πάνω */
+
     background: white;
     border: 1px solid #ccc;
     padding: 10px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    overflow: hidden;      /* Κρύβει τη γραμμή όταν είναι έξω από το κουμπί */
+    cursor:pointer;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
-/* Φτιάχνουμε τη μωβ γραμμή */
-#btn-palette::before {
-    content: "";           /* Απαραίτητο για να εμφανιστεί το ψευδο-στοιχείο */
-    position: absolute;
-    top: 0;                /* Την βάζουμε στο πάνω μέρος */
-    left: -100%;           /* Την κρύβουμε τέρμα αριστερά έξω από το κουμπί */
-    width: 100%;
-    height: 4px;           /* Το πάχος της γραμμής */
-    background-color: rgb(162, 89, 181);
-    transition: all 0.7s;  /* Η ταχύτητα του animation */
-}
-
-/* Τι συμβαίνει στο Hover */
-#btn-palette:hover::before {
-    left: 0;               /* Η γραμμή γλιστράει προς τα μέσα */
+#btn-palette:hover{
+    background-color: rgb(144, 84, 201);
 }
